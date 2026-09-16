@@ -338,11 +338,11 @@ export default function Home() {
               ))}
             </ul>
             <div className="mt-10">
-              <p className="text-lg font-bold text-muted-foreground line-through">US$ 29.99</p>
+              <p className="text-lg font-bold text-muted-foreground line-through">29,99 €</p>
               <p className="mt-1 text-sm font-extrabold tracking-widest text-navy">HOJE POR APENAS</p>
-              <p className="text-6xl font-black text-brand sm:text-7xl">US$ 9.99</p>
+              <p className="text-6xl font-black text-brand sm:text-7xl">9,99 €</p>
               <p className="mt-2 text-[10px] text-muted-foreground sm:text-xs">
-                O valor será convertido para a sua moeda local no momento do pagamento.
+                Pagamento único em euros.
               </p>
             </div>
             <div className="mt-6 flex flex-col items-center gap-3 sm:mt-8">
