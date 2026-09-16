@@ -97,7 +97,7 @@ const bonuses = [
     title: "Checklist Visual de Inspeção de Edifícios",
     description: "Checklist organizada com os principais pontos a observar em fachadas, coberturas, zonas húmidas, estruturas, pavimentos, paredes, caixilharias e sistemas de impermeabilização.",
     benefit: "Realize visitas técnicas com maior organização e reduza o risco de esquecer sinais importantes durante a inspeção.",
-    value: "US$ 7.90",
+    value: "7,90 €",
   },
   {
     number: "BÓNUS #2",
@@ -106,7 +106,7 @@ const bonuses = [
     title: "Modelo de Relatório de Inspeção",
     description: "Documento editável para organizar a identificação do imóvel, as manifestações observadas, os registos fotográficos, as hipóteses, as recomendações e as limitações da análise.",
     benefit: "Registe a informação de forma mais clara, normalizada e profissional.",
-    value: "US$ 9.90",
+    value: "9,90 €",
   },
   {
     number: "BÓNUS #3",
@@ -115,7 +115,7 @@ const bonuses = [
     title: "Catálogo Visual de Erros de Execução",
     description: "Material ilustrado com falhas frequentes na betonagem, revestimentos, impermeabilização, colocação de peças, juntas, acabamentos e instalações.",
     benefit: "Reconheça erros que podem gerar retrabalho, infiltrações, fissuras, destacamentos e outros problemas nos edifícios.",
-    value: "US$ 12.90",
+    value: "12,90 €",
   },
 ];
 
@@ -429,10 +429,10 @@ export default function Home() {
                 <li><CheckMark /> Atlas Visual de Patologias Construtivas</li>
                 <li><CheckMark /> 50 fichas técnicas ilustradas</li>
               </ul>
-              <p className="price-old">De <s>US$ 24.90</s> por:</p>
-              <p className="price-now">US$ 9.90</p>
+              <p className="price-old">De <s>24,90 €</s> por:</p>
+              <p className="price-now">9,90 €</p>
               <p className="price-inst">Pagamento único</p>
-              <span className="save-chip">Poupa US$ 15.00</span>
+              <span className="save-chip">Poupa 15,00 €</span>
               <button type="button" className="btn btn--ghost btn--block" onClick={() => setUpgradeOpen(true)}>QUERO APENAS O BÁSICO</button>
               <div className="social-arrow" data-reveal>
                 <span className="pill"><b>92%</b><span className="copy">das pessoas aproveitam a oferta completa</span></span>
@@ -451,10 +451,10 @@ export default function Home() {
                 <li className="bonus-line"><span className="bonus-icon"><Gift /></span><span><strong>Bónus #2</strong> — Modelo de Relatório de Inspeção</span></li>
                 <li className="bonus-line"><span className="bonus-icon"><Gift /></span><span><strong>Bónus #3</strong> — Catálogo Visual de Erros de Execução</span></li>
               </ul>
-              <p className="price-old">De <s>US$ 55.60</s> por:</p>
-              <p className="price-now">US$ 17.90</p>
+              <p className="price-old">De <s>55,60 €</s> por:</p>
+              <p className="price-now">17,90 €</p>
               <p className="price-inst">Pagamento único</p>
-              <span className="save-chip">Poupa US$ 37.70</span>
+              <span className="save-chip">Poupa 37,70 €</span>
               <CTA className="btn--block btn-pulse" href={CHECKOUT_COMPLETE}>Quero o plano completo</CTA>
               <div className="pay-seals">
                 <p className="pay-seals__title"><ShieldCheck /> Pagamento seguro processado pela Hotmart</p>
@@ -555,26 +555,26 @@ export default function Home() {
       {!upgradeOpen ? null : (
         <div className="upgrade-modal" onMouseDown={(event) => { if (event.target === event.currentTarget) setUpgradeOpen(false); }}>
           <div className="upgrade-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="upgrade-title" tabIndex={-1}>
-            <div className="upgrade-modal__notice"><strong>Ainda vai a tempo de escolher o plano completo</strong><span>Upgrade especial para sair do plano básico e desbloquear tudo por <b>US$ 13.90</b> nesta página.</span></div>
+            <div className="upgrade-modal__notice"><strong>Ainda vai a tempo de escolher o plano completo</strong><span>Upgrade especial para sair do plano básico e desbloquear tudo por <b>13,90 €</b> nesta página.</span></div>
             <div className="upgrade-modal__card">
               <button className="upgrade-modal__close" type="button" onClick={() => setUpgradeOpen(false)} aria-label="Fechar a oferta">×</button>
               <div className="upgrade-modal__top"><span className="upgrade-modal__eyebrow">upgrade Atlas de Patologias</span><span className="upgrade-modal__best">melhor escolha</span></div>
               <div className="upgrade-modal__grid">
                 <div className="upgrade-modal__content">
-                  <h3 id="upgrade-title">Leve o Plano Completo por US$ 13.90.</h3>
+                  <h3 id="upgrade-title">Leve o Plano Completo por 13,90 €.</h3>
                   <p className="upgrade-modal__lead">Mantém o Atlas Visual com 50 fichas técnicas e desbloqueia todos os bónus.</p>
                   <ul className="upgrade-modal__list">
                     <li><span className="check">✓</span><span>Checklist Visual de Inspeção de Edifícios</span></li>
                     <li><span className="check">✓</span><span>Modelo de Relatório de Inspeção</span></li>
                     <li><span className="check">✓</span><span>Catálogo Visual de Erros de Execução</span></li>
                   </ul>
-                  <div className="upgrade-modal__plus">Apenas mais US$ 4.00 do que o plano básico.</div>
+                  <div className="upgrade-modal__plus">Apenas mais 4,00 € do que o plano básico.</div>
                 </div>
-                <div className="upgrade-modal__price"><small>Plano completo normal: <s>US$ 17.90</s></small><span className="now">US$ 13.90</span><span className="note">Acesso imediato na área de membros</span></div>
+                <div className="upgrade-modal__price"><small>Plano completo normal: <s>17,90 €</s></small><span className="now">13,90 €</span><span className="note">Acesso imediato na área de membros</span></div>
               </div>
               <div className="upgrade-modal__actions">
-                <a className="btn btn--block btn-pulse upgrade-modal__accept" href={CHECKOUT_UPGRADE}>SIM, QUERO O COMPLETO POR US$ 13.90</a>
-                <a className="upgrade-modal__decline" href={CHECKOUT_BASIC}>Não, prefiro ficar apenas com o plano básico de US$ 9.90</a>
+                <a className="btn btn--block btn-pulse upgrade-modal__accept" href={CHECKOUT_UPGRADE}>SIM, QUERO O COMPLETO POR 13,90 €</a>
+                <a className="upgrade-modal__decline" href={CHECKOUT_BASIC}>Não, prefiro ficar apenas com o plano básico de 9,90 €</a>
               </div>
             </div>
           </div>
