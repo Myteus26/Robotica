@@ -14,42 +14,49 @@ import {
   Zap,
 } from "lucide-react";
 
-const HERO_IMAGE = "/manus-storage/hero-mockup-ptpt_2bbe1aab.png";
+const HERO_IMAGE =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/HXzmyDiuWDaPwrHV.png";
 const CHECKOUT_URL = "https://pay.hotmart.com/E107649399W";
 
 const projectCategories = [
   {
-    image: "/manus-storage/cat-robots_b96eec00.jpg",
+    image:
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/ncMLpVPxaeakzUiH.jpg",
     alt: "Robô caseiro construído com materiais simples",
     title: "Robôs que se movem",
     text: "Robô andante, robô desenhador, robô-escova e muito mais.",
   },
   {
-    image: "/manus-storage/cat-vehicles_6fc584b1.jpg",
+    image:
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/qVxTNGbIOwQQHKpV.jpg",
     alt: "Veículo elétrico caseiro com hélice",
     title: "Veículos e transportes",
     text: "Carros, barcos, veículos com hélice e projetos motorizados.",
   },
   {
-    image: "/manus-storage/cat-machines_78678d72.jpg",
+    image:
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/dGTYkozrmBPCHJGw.jpg",
     alt: "Grua caseira construída com cartão e paus de madeira",
     title: "Máquinas e mecanismos",
     text: "Gruas, elevadores, braços mecânicos e outras invenções.",
   },
   {
-    image: "/manus-storage/cat-electricity_caab3373.jpg",
+    image:
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/garJfpEpsIrYbnMn.jpg",
     alt: "Circuito básico com LED, cabos e motor",
     title: "Eletricidade fácil",
     text: "Motores, LED, interruptores e circuitos básicos.",
   },
   {
-    image: "/manus-storage/cat-cardboard_64810156.jpg",
+    image:
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/OYICUyoDLJcAfnhI.jpg",
     alt: "Invenção criativa construída em cartão",
     title: "Invenções em cartão",
     text: "Projetos criativos construídos com materiais simples.",
   },
   {
-    image: "/manus-storage/cat-recycled_0d942c5c.jpg",
+    image:
+      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/HBaLfrOlnzpBVhDe.jpg",
     alt: "Robô construído com materiais reciclados",
     title: "Projetos reciclados",
     text: "Garrafas, tampas, caixas, paus de madeira e materiais fáceis de encontrar.",
