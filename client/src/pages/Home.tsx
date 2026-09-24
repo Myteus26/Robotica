@@ -15,8 +15,7 @@ import {
 } from "lucide-react";
 
 const HERO_IMAGE = "/manus-storage/hero-mockup-ptpt_2bbe1aab.png";
-const CHECKOUT_URL =
-  "https://pay.hotmart.com/H107527775C?checkoutMode=10&utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term=&xcod=&sck=";
+const CHECKOUT_URL = "https://pay.hotmart.com/E107649399W";
 
 const projectCategories = [
   {
@@ -130,10 +129,6 @@ const faqs = [
   },
 ];
 
-function scrollToOffer() {
-  document.getElementById("oferta")?.scrollIntoView({ behavior: "smooth" });
-}
-
 function SectionTitle({ children, center = true }: { children: React.ReactNode; center?: boolean }) {
   return (
     <h2
@@ -219,13 +214,14 @@ export default function Home() {
           )}
         </ul>
         <div className="mt-5 flex flex-col items-center gap-2 sm:mt-10 sm:gap-3">
-          <button
-            type="button"
-            onClick={scrollToOffer}
+          <a
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="cta-button inline-flex w-full items-center justify-center rounded-2xl bg-brand px-8 py-4 text-base font-extrabold tracking-wide text-brand-foreground shadow-lg shadow-brand/25 hover:bg-brand/90 sm:w-auto sm:text-lg"
           >
             QUERO ACEDER AOS PROJETOS
-          </button>
+          </a>
           <p className="text-xs text-muted-foreground sm:text-sm">Acesso digital imediato após a compra</p>
         </div>
       </section>
