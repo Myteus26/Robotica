@@ -203,10 +203,27 @@ function vitePluginStorageProxy(): Plugin {
   };
 }
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
+function vitePluginAsyncProductionStyles(): Plugin {
+  return {
+    name: "async-production-styles",
+    enforce: "post",
+    transformIndexHtml: {
+      order: "post",
+      handler(html) {
+        return html.replace(
+          /<link rel="stylesheet" crossorigin href="([^"]+\.css)">/,
+          '<link rel="preload" as="style" crossorigin href="$1" data-app-styles onload="this.onload=null;this.rel=\'stylesheet\';document.documentElement.dataset.appStyles=\'ready\';window.dispatchEvent(new Event(\'app-styles-ready\'))"><noscript><link rel="stylesheet" crossorigin href="$1"></noscript>',
+        );
+      },
+    },
+  };
+}
 
-export default defineConfig({
-  plugins,
+export default defineConfig(({ command }) => ({
+  plugins:
+    command === "build"
+      ? [react(), tailwindcss(), vitePluginAsyncProductionStyles()]
+      : [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -238,4 +255,4 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
-});
+}));

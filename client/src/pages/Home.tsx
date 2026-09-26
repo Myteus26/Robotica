@@ -14,8 +14,13 @@ import {
   Zap,
 } from "lucide-react";
 
-const HERO_IMAGE =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/HXzmyDiuWDaPwrHV.png";
+const HERO_IMAGE_480 =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp";
+const HERO_IMAGE_960 =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/HHSTTWxWoZqgnffx.webp";
+const HERO_IMAGE_1440 =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/THxLUxfnXXsMpeau.webp";
+const HERO_IMAGE_SRC_SET = `${HERO_IMAGE_480} 480w, ${HERO_IMAGE_960} 960w, ${HERO_IMAGE_1440} 1440w`;
 const CHECKOUT_URL = "https://pay.hotmart.com/E107649399W";
 
 const projectCategories = [
@@ -203,10 +208,14 @@ export default function Home() {
         </p>
         <div className="mt-4 overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-navy/5 sm:mt-10 sm:rounded-3xl">
           <img
-            src={HERO_IMAGE}
+            src={HERO_IMAGE_960}
+            srcSet={HERO_IMAGE_SRC_SET}
+            sizes="(max-width: 640px) calc(100vw - 40px), 1024px"
             alt="Biblioteca digital de projetos de robótica: robô andante, carro elétrico, braço robótico, grua e circuitos passo a passo"
             width="1920"
             height="1920"
+            fetchPriority="high"
+            decoding="async"
             className="h-auto w-full object-cover"
           />
         </div>
@@ -321,9 +330,12 @@ export default function Home() {
             </SectionTitle>
             <div className="mx-auto mt-8 max-w-sm overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
               <img
-                src={HERO_IMAGE}
+                src={HERO_IMAGE_480}
+                srcSet={HERO_IMAGE_SRC_SET}
+                sizes="(max-width: 640px) calc(100vw - 80px), 384px"
                 alt="Mockup da biblioteca digital de projetos de robótica"
                 loading="lazy"
+                decoding="async"
                 width="1920"
                 height="1920"
                 className="h-auto w-full object-cover"
