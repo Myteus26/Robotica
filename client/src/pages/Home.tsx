@@ -14,48 +14,71 @@ import {
   Zap,
 } from "lucide-react";
 
-const HERO_IMAGE_480 =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp";
-const HERO_IMAGE_768 =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/kFZdWyhDgShYToTo.webp";
-const HERO_IMAGE_1440 =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/THxLUxfnXXsMpeau.webp";
-const HERO_IMAGE_SRC_SET = `${HERO_IMAGE_480} 480w, ${HERO_IMAGE_768} 768w, ${HERO_IMAGE_1440} 1440w`;
+const HERO_AVIF_480 =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/CZwOKaZvFlsXnucZ.avif";
+const HERO_AVIF_SRC_SET = [
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/FLMIAgIJHgAMBNlW.avif 768w",
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TfehKRHSRqYfCHby.avif 1024w",
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/cZFEeWxprTqJsKnz.avif 1440w",
+].join(", ");
+const HERO_WEBP_480 =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/HVILYFGpxFJnzRmt.webp";
+const HERO_WEBP_768 =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/vjnVScZMbHOgFLwO.webp";
+const HERO_WEBP_SRC_SET = [
+  `${HERO_WEBP_480} 480w`,
+  `${HERO_WEBP_768} 768w`,
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/UemwWdcsICdMLQqk.webp 1024w",
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TyLetEQMcWJidOaY.webp 1440w",
+].join(", ");
+const HERO_SIZES = "(max-width: 640px) calc(100vw - 40px), 1024px";
 const CHECKOUT_URL = "https://pay.hotmart.com/E107649399W";
 
 const projectCategories = [
   {
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/jMBvFGKZPiBJJuqg.webp",
+    avifSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/hRuoJWuealVUzqEQ.avif 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/uhZuTEzktkoydHog.avif 600w",
+    webpSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/zRcbMfhtWmPBDkyT.webp 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/cbOHCdCDetLrJwpw.webp 600w",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/cbOHCdCDetLrJwpw.webp",
     alt: "Robô caseiro construído com materiais simples",
     title: "Robôs que se movem",
     text: "Robô andante, robô desenhador, robô-escova e muito mais.",
   },
   {
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/ZFOWspSekPiBqfrK.webp",
+    avifSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/IaYekvClbqqczOUm.avif 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/BXYgivhKcmRfiSTi.avif 600w",
+    webpSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/ykOfrDuAJMkyXqti.webp 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/oTmRgaGbCbFEEqCF.webp 600w",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/oTmRgaGbCbFEEqCF.webp",
     alt: "Veículo elétrico caseiro com hélice",
     title: "Veículos e transportes",
     text: "Carros, barcos, veículos com hélice e projetos motorizados.",
   },
   {
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/lETgLReVXDaSGDrX.webp",
+    avifSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/jTttdDHfgKohCBjH.avif 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/HaHvpipXGiZMDCsB.avif 600w",
+    webpSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/KxRnvCqzhAVsliaT.webp 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/mZKaNfxkzfbwpQTS.webp 600w",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/mZKaNfxkzfbwpQTS.webp",
     alt: "Grua caseira construída com cartão e paus de madeira",
     title: "Máquinas e mecanismos",
     text: "Gruas, elevadores, braços mecânicos e outras invenções.",
   },
   {
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/NAfBpGtwVnpvvoFz.webp",
+    avifSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/dcJHBhxmBLuRCmZL.avif 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/CkEOuqHTJTFUqFyP.avif 600w",
+    webpSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/gWbrzJixHrEcfGVO.webp 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/FPoPwwEvnaYiporC.webp 600w",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/FPoPwwEvnaYiporC.webp",
     alt: "Circuito básico com LED, cabos e motor",
     title: "Eletricidade fácil",
     text: "Motores, LED, interruptores e circuitos básicos.",
   },
   {
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/EcprStmfWECGEtKG.webp",
+    avifSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/KjcmdoDZMLEUFZPn.avif 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/NMiKZpWFcLpZpHuJ.avif 600w",
+    webpSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/KqAfdskKXusmnkDr.webp 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/cqXENvcNIxwyTNcc.webp 600w",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/cqXENvcNIxwyTNcc.webp",
     alt: "Invenção criativa construída em cartão",
     title: "Invenções em cartão",
     text: "Projetos criativos construídos com materiais simples.",
   },
   {
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/IdnNnLMXVwyLAJgv.webp",
+    avifSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/hVImYCxBDizUwwxH.avif 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/ssNXTFrlBXuYyBmr.avif 600w",
+    webpSrcSet: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/GAvLjHVNKrevGLRb.webp 360w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/rwoHlnugJUPMSOuT.webp 600w",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/rwoHlnugJUPMSOuT.webp",
     alt: "Robô construído com materiais reciclados",
     title: "Projetos reciclados",
     text: "Garrafas, tampas, caixas, paus de madeira e materiais fáceis de encontrar.",
@@ -201,17 +224,21 @@ export default function Home() {
           Robôs, veículos, máquinas e invenções passo a passo para crianças e principiantes.
         </p>
         <div className="mt-4 overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-navy/5 sm:mt-10 sm:rounded-3xl">
-          <img
-            src={HERO_IMAGE_768}
-            srcSet={HERO_IMAGE_SRC_SET}
-            sizes="(max-width: 640px) calc(100vw - 40px), 1024px"
-            alt="Biblioteca digital de projetos de robótica: robô andante, carro elétrico, braço robótico, grua e circuitos passo a passo"
-            width="1920"
-            height="1920"
-            fetchPriority="high"
-            decoding="async"
-            className="h-auto w-full object-cover"
-          />
+          <picture>
+            <source type="image/avif" media="(max-width: 640px)" srcSet={HERO_AVIF_480} />
+            <source type="image/avif" srcSet={HERO_AVIF_SRC_SET} sizes={HERO_SIZES} />
+            <source type="image/webp" media="(max-width: 640px)" srcSet={HERO_WEBP_480} />
+            <source type="image/webp" srcSet={HERO_WEBP_SRC_SET} sizes={HERO_SIZES} />
+            <img
+              src={HERO_WEBP_768}
+              alt="Biblioteca digital de projetos de robótica: robô andante, carro elétrico, braço robótico, grua e circuitos passo a passo"
+              width="1920"
+              height="1920"
+              fetchPriority="high"
+              decoding="async"
+              className="h-auto w-full object-cover"
+            />
+          </picture>
         </div>
         <ul className="mx-auto mt-4 grid max-w-2xl grid-cols-2 gap-2 text-left sm:mt-8 sm:gap-3">
           {["Projetos passo a passo", "Ideal para crianças e principiantes", "Materiais simples e económicos", "Atividades para casa ou para a escola"].map(
@@ -278,14 +305,20 @@ export default function Home() {
                 key={project.title}
                 className="overflow-hidden rounded-2xl border border-border bg-card text-left shadow-sm transition-shadow hover:shadow-md"
               >
-                <img
-                  src={project.image}
-                  alt={project.alt}
-                  loading="lazy"
-                  width="1024"
-                  height="512"
-                  className="aspect-[2/1] w-full object-cover"
-                />
+                <picture>
+                  <source type="image/avif" srcSet={project.avifSrcSet} sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 36px), 360px" />
+                  <source type="image/webp" srcSet={project.webpSrcSet} sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1024px) calc(50vw - 36px), 360px" />
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
+                    width="600"
+                    height="300"
+                    className="aspect-[2/1] w-full object-cover"
+                  />
+                </picture>
                 <div className="p-5">
                   <h3 className="text-lg font-extrabold text-navy">{project.title}</h3>
                   <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{project.text}</p>
@@ -323,17 +356,22 @@ export default function Home() {
               Adquira hoje a biblioteca completa de <span className="text-brand">100 Projetos de Robótica para Crianças</span>
             </SectionTitle>
             <div className="mx-auto mt-8 max-w-sm overflow-hidden rounded-2xl border border-border bg-card shadow-lg">
-              <img
-                src={HERO_IMAGE_480}
-                srcSet={HERO_IMAGE_SRC_SET}
-                sizes="(max-width: 640px) calc(100vw - 80px), 384px"
-                alt="Mockup da biblioteca digital de projetos de robótica"
-                loading="lazy"
-                decoding="async"
-                width="1920"
-                height="1920"
-                className="h-auto w-full object-cover"
-              />
+              <picture>
+                <source type="image/avif" media="(max-width: 640px)" srcSet={HERO_AVIF_480} />
+                <source type="image/avif" srcSet={HERO_AVIF_SRC_SET} sizes="(max-width: 640px) calc(100vw - 80px), 384px" />
+                <source type="image/webp" media="(max-width: 640px)" srcSet={HERO_WEBP_480} />
+                <source type="image/webp" srcSet={HERO_WEBP_SRC_SET} sizes="(max-width: 640px) calc(100vw - 80px), 384px" />
+                <img
+                  src={HERO_WEBP_480}
+                  alt="Mockup da biblioteca digital de projetos de robótica"
+                  loading="lazy"
+                  decoding="async"
+                  fetchPriority="low"
+                  width="1920"
+                  height="1920"
+                  className="h-auto w-full object-cover"
+                />
+              </picture>
             </div>
             <p className="mx-auto mt-6 max-w-xl text-muted-foreground leading-relaxed">
               Receba acesso a uma coleção completa com mais de 100 projetos de robótica organizados para aprender a construir.
