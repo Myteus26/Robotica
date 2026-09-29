@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://files.manuscdn.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="image" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp" imagesrcset="https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp 480w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/HHSTTWxWoZqgnffx.webp 960w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/THxLUxfnXXsMpeau.webp 1440w" imagesizes="(max-width: 640px) calc(100vw - 40px), 1024px" fetchpriority="high" />
+    <link rel="preload" as="image" href="https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp" imagesrcset="https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp 480w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/kFZdWyhDgShYToTo.webp 768w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/THxLUxfnXXsMpeau.webp 1440w" imagesizes="(max-width: 640px) calc(100vw - 40px), 1024px" fetchpriority="high" />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" /></noscript>
@@ -25,7 +25,7 @@
           <span class="loading-badge">⚙ +100 PROJETOS PASSO A PASSO</span>
           <h1 class="loading-title">+100 projetos de robótica para aprender <strong>a construir</strong></h1>
           <p class="loading-copy">Robôs, veículos, máquinas e invenções passo a passo para crianças e principiantes.</p>
-          <img class="loading-image" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp" srcset="https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp 480w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/HHSTTWxWoZqgnffx.webp 960w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/THxLUxfnXXsMpeau.webp 1440w" sizes="(max-width: 640px) calc(100vw - 40px), 1024px" alt="Biblioteca digital de projetos de robótica" width="1920" height="1920" fetchpriority="high" decoding="async" />
+          <img class="loading-image" src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp" srcset="https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp 480w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/kFZdWyhDgShYToTo.webp 768w, https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/THxLUxfnXXsMpeau.webp 1440w" sizes="(max-width: 640px) calc(100vw - 40px), 1024px" alt="Biblioteca digital de projetos de robótica" width="1920" height="1920" fetchpriority="high" decoding="async" />
           <ul class="loading-benefits"><li>Projetos passo a passo</li><li>Ideal para principiantes</li><li>Materiais simples</li><li>Para casa ou escola</li></ul>
           <a class="loading-cta" href="https://pay.hotmart.com/E107649399W" target="_blank" rel="noopener noreferrer">QUERO ACEDER AOS PROJETOS</a>
           <p class="loading-note">Acesso digital imediato após a compra</p>
@@ -33,6 +33,26 @@
       </main>
     </div>
     <script type="module" src="/src/main.tsx"></script>
-    <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    <script>
+      (() => {
+        let loaded = false;
+        const loadAnalytics = () => {
+          if (loaded) return;
+          loaded = true;
+          const endpoint = "%VITE_ANALYTICS_ENDPOINT%";
+          const websiteId = "%VITE_ANALYTICS_WEBSITE_ID%";
+          if (endpoint.startsWith("%") || websiteId.startsWith("%")) return;
+          const script = document.createElement("script");
+          script.defer = true;
+          script.src = `${endpoint}/umami`;
+          script.dataset.websiteId = websiteId;
+          document.head.appendChild(script);
+        };
+        ["pointerdown", "keydown", "scroll"].forEach((eventName) =>
+          window.addEventListener(eventName, loadAnalytics, { once: true, passive: true }),
+        );
+        window.setTimeout(loadAnalytics, 10_000);
+      })();
+    </script>
   </body>
 </html>

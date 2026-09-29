@@ -16,52 +16,46 @@ import {
 
 const HERO_IMAGE_480 =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/TFNZqIfIoPnDcGxf.webp";
-const HERO_IMAGE_960 =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/HHSTTWxWoZqgnffx.webp";
+const HERO_IMAGE_768 =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/kFZdWyhDgShYToTo.webp";
 const HERO_IMAGE_1440 =
   "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/THxLUxfnXXsMpeau.webp";
-const HERO_IMAGE_SRC_SET = `${HERO_IMAGE_480} 480w, ${HERO_IMAGE_960} 960w, ${HERO_IMAGE_1440} 1440w`;
+const HERO_IMAGE_SRC_SET = `${HERO_IMAGE_480} 480w, ${HERO_IMAGE_768} 768w, ${HERO_IMAGE_1440} 1440w`;
 const CHECKOUT_URL = "https://pay.hotmart.com/E107649399W";
 
 const projectCategories = [
   {
-    image:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/ncMLpVPxaeakzUiH.jpg",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/jMBvFGKZPiBJJuqg.webp",
     alt: "Robô caseiro construído com materiais simples",
     title: "Robôs que se movem",
     text: "Robô andante, robô desenhador, robô-escova e muito mais.",
   },
   {
-    image:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/qVxTNGbIOwQQHKpV.jpg",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/ZFOWspSekPiBqfrK.webp",
     alt: "Veículo elétrico caseiro com hélice",
     title: "Veículos e transportes",
     text: "Carros, barcos, veículos com hélice e projetos motorizados.",
   },
   {
-    image:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/dGTYkozrmBPCHJGw.jpg",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/lETgLReVXDaSGDrX.webp",
     alt: "Grua caseira construída com cartão e paus de madeira",
     title: "Máquinas e mecanismos",
     text: "Gruas, elevadores, braços mecânicos e outras invenções.",
   },
   {
-    image:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/garJfpEpsIrYbnMn.jpg",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/NAfBpGtwVnpvvoFz.webp",
     alt: "Circuito básico com LED, cabos e motor",
     title: "Eletricidade fácil",
     text: "Motores, LED, interruptores e circuitos básicos.",
   },
   {
-    image:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/OYICUyoDLJcAfnhI.jpg",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/EcprStmfWECGEtKG.webp",
     alt: "Invenção criativa construída em cartão",
     title: "Invenções em cartão",
     text: "Projetos criativos construídos com materiais simples.",
   },
   {
-    image:
-      "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/HBaLfrOlnzpBVhDe.jpg",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663961697104/IdnNnLMXVwyLAJgv.webp",
     alt: "Robô construído com materiais reciclados",
     title: "Projetos reciclados",
     text: "Garrafas, tampas, caixas, paus de madeira e materiais fáceis de encontrar.",
@@ -208,7 +202,7 @@ export default function Home() {
         </p>
         <div className="mt-4 overflow-hidden rounded-2xl border border-border bg-card shadow-xl shadow-navy/5 sm:mt-10 sm:rounded-3xl">
           <img
-            src={HERO_IMAGE_960}
+            src={HERO_IMAGE_768}
             srcSet={HERO_IMAGE_SRC_SET}
             sizes="(max-width: 640px) calc(100vw - 40px), 1024px"
             alt="Biblioteca digital de projetos de robótica: robô andante, carro elétrico, braço robótico, grua e circuitos passo a passo"

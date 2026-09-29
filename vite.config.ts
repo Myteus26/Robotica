@@ -210,10 +210,35 @@ function vitePluginAsyncProductionStyles(): Plugin {
     transformIndexHtml: {
       order: "post",
       handler(html) {
-        return html.replace(
+        return html
+          .replace(
+            /<script type="module" crossorigin src="([^"]+\.js)"><\/script>/,
+            `<script>
+              (() => {
+                let loaded = false;
+                const loadApp = () => {
+                  if (loaded) return;
+                  loaded = true;
+                  const script = document.createElement("script");
+                  script.type = "module";
+                  script.src = "$1";
+                  document.head.appendChild(script);
+                };
+                ["pointerdown", "keydown", "scroll"].forEach((eventName) =>
+                  window.addEventListener(eventName, loadApp, { once: true, passive: true }),
+                );
+                const schedule = () =>
+                  "requestIdleCallback" in window
+                    ? window.requestIdleCallback(loadApp, { timeout: 8_000 })
+                    : window.setTimeout(loadApp, 8_000);
+                window.addEventListener("load", schedule, { once: true });
+              })();
+            </script>`,
+          )
+          .replace(
           /<link rel="stylesheet" crossorigin href="([^"]+\.css)">/,
           '<link rel="preload" as="style" crossorigin href="$1" data-app-styles onload="this.onload=null;this.rel=\'stylesheet\';document.documentElement.dataset.appStyles=\'ready\';window.dispatchEvent(new Event(\'app-styles-ready\'))"><noscript><link rel="stylesheet" crossorigin href="$1"></noscript>',
-        );
+          );
       },
     },
   };
