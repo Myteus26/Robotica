@@ -47,11 +47,15 @@
         if (location.hostname.endsWith(".manus.space")) return;
         const endpoint = "%VITE_ANALYTICS_ENDPOINT%";
         const websiteId = "%VITE_ANALYTICS_WEBSITE_ID%";
-        if (endpoint.startsWith("%") || websiteId.startsWith("%")) return;
+        const configured = !endpoint.startsWith("%") && !websiteId.startsWith("%");
+        // The public ad domain does not receive the VITE_* variables at build time.
+        // Use the same public website ID already configured on the Manus deployment.
+        const adDomain = location.hostname === "robotica-kappa.vercel.app";
+        if (!configured && !adDomain) return;
         const script = document.createElement("script");
         script.defer = true;
-        script.src = `${endpoint}/umami`;
-        script.dataset.websiteId = websiteId;
+        script.src = `${configured ? endpoint : "https://manus-analytics.com"}/umami`;
+        script.dataset.websiteId = configured ? websiteId : "59155448-f08e-42ec-9331-6683a9a10328";
         document.head.appendChild(script);
       })();
     </script>
