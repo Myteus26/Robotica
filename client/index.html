@@ -42,23 +42,17 @@
     <script type="module" src="/src/main.tsx"></script>
     <script>
       (() => {
-        let loaded = false;
-        const loadAnalytics = () => {
-          if (loaded) return;
-          loaded = true;
-          const endpoint = "%VITE_ANALYTICS_ENDPOINT%";
-          const websiteId = "%VITE_ANALYTICS_WEBSITE_ID%";
-          if (endpoint.startsWith("%") || websiteId.startsWith("%")) return;
-          const script = document.createElement("script");
-          script.defer = true;
-          script.src = `${endpoint}/umami`;
-          script.dataset.websiteId = websiteId;
-          document.head.appendChild(script);
-        };
-        ["pointerdown", "keydown", "scroll"].forEach((eventName) =>
-          window.addEventListener(eventName, loadAnalytics, { once: true, passive: true }),
-        );
-        window.setTimeout(loadAnalytics, 10_000);
+        // Manus injects its own pageview script into published .manus.space pages.
+        // A second tracker here records the same visitor again after 10 seconds.
+        if (location.hostname.endsWith(".manus.space")) return;
+        const endpoint = "%VITE_ANALYTICS_ENDPOINT%";
+        const websiteId = "%VITE_ANALYTICS_WEBSITE_ID%";
+        if (endpoint.startsWith("%") || websiteId.startsWith("%")) return;
+        const script = document.createElement("script");
+        script.defer = true;
+        script.src = `${endpoint}/umami`;
+        script.dataset.websiteId = websiteId;
+        document.head.appendChild(script);
       })();
     </script>
   </body>
